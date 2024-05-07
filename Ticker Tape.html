@@ -7,17 +7,17 @@
         background-color: #000;
         color: #fff;
       }
-      .widget-wrapper {
+      .widget-row {
         display: flex;
       }
-      .widget-wrapper .sector-name {
+      .widget-row .sector-name {
         flex: 1;
         background: #1e222d;
         border: 1px solid #434651;
         border-radius: 3px;
         box-sizing: border-box;
       }
-      .widget-wrapper .tradingview-widget-container {
+      .widget-row .tradingview-widget-container {
         flex: 6;
       }
       .mini-chart-wrapper {
@@ -118,7 +118,7 @@
 
         // Create widget wrapper and add everything made so far
         var widgetWrapper = document.createElement("div");
-        widgetWrapper.className = "widget-wrapper";
+        widgetWrapper.className = "widget-row";
         widgetWrapper.appendChild(sectorNameDiv);
         widgetWrapper.appendChild(widgetContainer);
 
@@ -130,7 +130,7 @@
 
     <!-- https://www.tradingview.com/widget-docs/widgets/charts/mini-chart/ -->
     <!-- TradingView Mini Chart Widget BEGIN -->
-    <div class="widget-wrapper">
+    <div class="widget-row">
       <div class="mini-chart-wrapper">
         <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
           {
@@ -186,6 +186,49 @@
         </script>
         <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
           {
+            "symbol": "SZSE:399001",
+                  "width": "100%",
+                  "height": "100%",
+                  "locale": "en",
+                  "dateRange": "1M",
+                  "colorTheme": "dark",
+                  "isTransparent": false,
+                  "autosize": true,
+                  "largeChartUrl": ""
+          }
+        </script>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          {
+            "symbol": "HSI:HSI",
+                  "width": "100%",
+                  "height": "100%",
+                  "locale": "en",
+                  "dateRange": "1M",
+                  "colorTheme": "dark",
+                  "isTransparent": false,
+                  "autosize": true,
+                  "largeChartUrl": ""
+          }
+        </script>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          {
+            "symbol": "FOREXCOM:JP225",
+                  "width": "100%",
+                  "height": "100%",
+                  "locale": "en",
+                  "dateRange": "1Y",
+                  "colorTheme": "dark",
+                  "isTransparent": false,
+                  "autosize": true,
+                  "largeChartUrl": ""
+          }
+        </script>
+      </div>
+    </div>
+    <div class="widget-row">
+      <div class="mini-chart-wrapper">
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+          {
             "symbol": "FX_IDC:USDCNY",
                   "width": "100%",
                   "height": "100%",
@@ -223,10 +266,6 @@
                   "largeChartUrl": ""
           }
         </script>
-      </div>
-    </div>
-    <div class="widget-wrapper">
-      <div class="mini-chart-wrapper">
         <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
           {
             "symbol": "NASDAQ:AAPL",
@@ -268,46 +307,7 @@
         </script>
         <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
           {
-            "symbol": "SSE:000001",
-                  "width": "100%",
-                  "height": "100%",
-                  "locale": "en",
-                  "dateRange": "1M",
-                  "colorTheme": "dark",
-                  "isTransparent": false,
-                  "autosize": true,
-                  "largeChartUrl": ""
-          }
-        </script>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-          {
-            "symbol": "NYSE:BRK.A",
-                  "width": "100%",
-                  "height": "100%",
-                  "locale": "en",
-                  "dateRange": "1M",
-                  "colorTheme": "dark",
-                  "isTransparent": false,
-                  "autosize": true,
-                  "largeChartUrl": ""
-          }
-        </script>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-          {
-            "symbol": "NYSE:BRK.A",
-                  "width": "100%",
-                  "height": "100%",
-                  "locale": "en",
-                  "dateRange": "1Y",
-                  "colorTheme": "dark",
-                  "isTransparent": false,
-                  "autosize": true,
-                  "largeChartUrl": ""
-          }
-        </script>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-          {
-            "symbol": "NYSE:BRK.A",
+            "symbol": "SSE:600519",
                   "width": "100%",
                   "height": "100%",
                   "locale": "en",
