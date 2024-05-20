@@ -1,0 +1,220 @@
+{
+  "Tech": {
+    "Tech - Big Tech": [
+      {
+        "proName": "NASDAQ:AAPL",
+        "description": "Apple"
+      },
+      {
+        "proName": "NASDAQ:GOOGL",
+        "description": "Google"
+      },
+      {
+        "proName": "NASDAQ:AMZN",
+        "description": "AMAZON"
+      },
+      {
+        "proName": "NASDAQ:MSFT",
+        "description": "Microsoft"
+      },
+      {
+        "proName": "NASDAQ:META",
+        "description": "Meta"
+      },
+      {
+        "proName": "NASDAQ:NFLX",
+        "description": "Netflix"
+      },
+      {
+        "proName": "NASDAQ:TSLA",
+        "description": "Tesla"
+      }
+    ],
+    "Tech - Semiconductor": [
+      {
+        "proName": "NASDAQ:NVDA",
+        "description": "NVIDIA"
+      },
+      {
+        "proName": "NASDAQ:AMD",
+        "description": "AMD"
+      },
+      {
+        "proName": "NYSE:TSM",
+        "description": "台积电"
+      },
+      {
+        "proName": "NASDAQ:ASML",
+        "description": "ASML"
+      },
+      {
+        "proName": "NASDAQ:QCOM",
+        "description": "Qualcomm"
+      },
+      {
+        "proName": "NASDAQ:AVGO",
+        "description": "BROADCOM"
+      },
+      {
+        "proName": "NASDAQ:SMCI",
+        "description": "Supermicro"
+      },
+      {
+        "proName": "NASDAQ:INTC",
+        "description": "INTEL"
+      },
+      {
+        "proName": "NASDAQ:ARM",
+        "description": "ARM"
+      },
+      {
+        "proName": "NASDAQ:MU",
+        "description": "Micron"
+      },
+      {
+        "proName": "NASDAQ:MRVL",
+        "description": "Marvell"
+      },
+      {
+        "proName": "NASDAQ:LRCX",
+        "description": "Lam Research"
+      },
+      {
+        "proName": "NASDAQ:AMAT",
+        "description": "Applied Materials"
+      }
+    ],
+    "Tech - Growth": [
+      {
+        "proName": "NASDAQ:ABNB",
+        "description": "Airbnb"
+      },
+      {
+        "proName": "NYSE:UBER",
+        "description": "Uber"
+      }
+    ],
+    "Fintech": [
+      {
+        "proName": "NYSE:FI",
+        "description": "Fiserv"
+      }
+    ],
+    "Tech - Infra": [
+      {
+        "proName": "NYSE:VRT",
+        "description": "Vertiv"
+      },
+      {
+        "proName": "NASDAQ:EQIX",
+        "description": "Equinix"
+      },
+      {
+        "proName": "NASDAQ:PANW",
+        "description": "Palo Alto Networks"
+      },
+      {
+        "proName": "NASDAQ:NTNX",
+        "description": "Nutanix"
+      }
+    ]
+  },
+  "Consumer, Retail, Pharma, Transportation": {
+    "Consumer Staples, Consumer Discretionary": [
+      {
+        "proName": "NASDAQ:COST",
+        "description": "Costco"
+      }
+    ],
+    "Pharma": [
+      {
+        "proName": "NYSE:NVO",
+        "description": "Novo Nordisk"
+      },
+      {
+        "proName": "NYSE:MRK",
+        "description": "Merck"
+      },
+      {
+        "proName": "NASDAQ:GILD",
+        "description": "Gilead"
+      },
+      {
+        "proName": "NYSE:MS",
+        "description": "Morgan Stanley"
+      }
+    ],
+    "Transportation - Airline": [
+      {
+        "proName": "NASDAQ:AAL",
+        "description": "American Airlines"
+      }
+    ],
+    "Transportation - Logistics": [
+      {
+        "proName": "NYSE:FDX",
+        "description": "Fedex"
+      }
+    ]
+  },
+  "Traditional": {
+    "Banking": [
+      {
+        "proName": "NYSE:V",
+        "description": "Visa"
+      },
+      {
+        "proName": "NYSE:MA",
+        "description": "Mastercard"
+      },
+      {
+        "proName": "NYSE:AXP",
+        "description": "AMEX"
+      },
+      {
+        "proName": "NYSE:GS",
+        "description": "Goldman Sachs"
+      },
+      {
+        "proName": "NYSE:JPM",
+        "description": "JPMC"
+      },
+      {
+        "proName": "NYSE:BAC",
+        "description": "Bank of America"
+      },
+      {
+        "proName": "NYSE:WFC",
+        "description": "Wells Fargo"
+      }
+    ],
+    "Consortium": [
+      {
+        "proName": "NYSE:BRK.A",
+        "description": "Berkshire A"
+      },
+      {
+        "proName": "NYSE:KKR",
+        "description": "KKR"
+      },
+      {
+        "proName": "NYSE:BX",
+        "description": "Blackstone"
+      }
+    ],
+    "Energy": [
+      {
+        "proName": "NYSE:CVX",
+        "description": "Chevron"
+      }
+    ]
+  },
+  "Misc": {
+    "China": [
+      {
+        "proName": "NYSE:BABA",
+        "description": "Alibaba"
+      }
+    ]
+  }
+}

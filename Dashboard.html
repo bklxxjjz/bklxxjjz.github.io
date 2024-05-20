@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TradingView Widget</title>
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+      }
+      .widget-row {
+        display: flex;
+      }
+      .widget-row .sector-name {
+        flex: 1;
+        background: #1e222d;
+        border: 1px solid #434651;
+        border-radius: 3px;
+        box-sizing: border-box;
+      }
+      .widget-row .tradingview-widget-container {
+        flex: 6;
+      }
+      .mini-chart-wrapper {
+        overflow: hidden;
+        height: 80px;
+        display: flex;
+      }
+      .mini-chart-wrapper iframe {
+        /* zoom out to make chart smaller while fitting the box */
+        --scale-factor: 0.5;
+        transform: scale(var(--scale-factor), var(--scale-factor));
+        transform-origin: left top;
+        width: calc(100% /var(--scale-factor)) !important;
+        height: calc(100% /var(--scale-factor)) !important;;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- https://www.tradingview.com/widget-docs/widgets/tickers/ticker-tape/ -->
+    <!-- TradingView Ticker Tape Widget BEGIN -->
+    <div id="ticker-tape-rows"></div>
+    <script>
+      fetch('ticker_tape_sections.json')
+              .then(response => response.json())
+              .then(tickerSections => {
+                var tickerTapeRows = document.getElementById('ticker-tape-rows');
+
+                for (var sectionName in tickerSections) {
+                  // var tickers = tickerSections[sectionName];
+                  var tickers = Object.values(tickerSections[sectionName]).flat()
+
+                  // create and add div for Sector Name
+                  var sectorNameDiv = document.createElement('div');
+                  sectorNameDiv.className = 'sector-name';
+                  sectorNameDiv.textContent = sectionName;
+
+                  // Create main widget container
+                  var widgetContainer = document.createElement("div");
+                  widgetContainer.className = "tradingview-widget-container";
+
+                  // Create widget container
+                  var widgetDiv = document.createElement("div");
+                  widgetDiv.className = "tradingview-widget-container__widget";
+                  widgetContainer.appendChild(widgetDiv);
+
+                  // Create, set attributes and add content to script for widget
+                  var script = document.createElement("script");
+                  script.src = "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
+                  script.async = true;
+                  script.textContent = `{
+                    "symbols": ${JSON.stringify(tickers)},
+                    "showSymbolLogo": true,
+                    "isTransparent": false,
+                    "displayMode": "compact",
+                    "colorTheme": "dark",
+                    "locale": "en"
+                  }`;
+
+                  widgetContainer.appendChild(script); // Add script to widget container
+
+                  // Create widget wrapper and add everything made so far
+                  var widgetWrapper = document.createElement("div");
+                  widgetWrapper.className = "widget-row";
+                  widgetWrapper.appendChild(sectorNameDiv);
+                  widgetWrapper.appendChild(widgetContainer);
+
+                  // Append widget wrapper to ticker-tape-rows
+                  tickerTapeRows.appendChild(widgetWrapper);
+                }
+              });
+    </script>
+    <!-- TradingView Ticker Tape Widget END -->
+
+    <!-- https://www.tradingview.com/widget-docs/widgets/charts/mini-chart/ -->
+    <!-- TradingView Mini Chart Widget BEGIN -->
+    <div id="mini-chart-rows">
+      <script>
+        /*
+        <!-- Below code will generate the following structure -->
+        <div class="widget-row">
+          <div class="mini-chart-wrapper">
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+              {
+                "symbol": "FRED:SP500",
+                      "width": "100%",
+                      "height": "100%",
+                      "locale": "en",
+                      "dateRange": "1M",
+                      "colorTheme": "dark",
+                      "isTransparent": false,
+                      "autosize": true,
+                      "largeChartUrl": ""
+              }
+            <+/script>
+            ......
+          </div>
+        </div>
+        */
+        fetch('mini_chart_rows.json')
+                .then(response => response.json())
+                .then(miniChartRows => {
+                  var parentContainer = document.getElementById('mini-chart-rows');
+
+                  miniChartRows.forEach(function (miniChartRow) {
+                    var rowDiv = document.createElement('div');
+                    rowDiv.className = 'widget-row';
+
+                    var wrapperDiv = document.createElement('div');
+                    wrapperDiv.className = 'mini-chart-wrapper';
+
+                    miniChartRow.forEach(function(miniChart) {
+                      var script = document.createElement("script");
+                      script.src = "https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js";
+                      script.async = true;
+                      script.innerHTML = JSON.stringify({
+                        "symbol": miniChart.symbol,
+                        "width": "100%",
+                        "height": "100%",
+                        "locale": "en",
+                        "dateRange": miniChart.dateRange,
+                        "colorTheme": "dark",
+                        "isTransparent": false,
+                        "autosize": true,
+                        "largeChartUrl": ""
+                      });
+                      wrapperDiv.appendChild(script);
+                    });
+
+                    rowDiv.appendChild(wrapperDiv);
+                    parentContainer.appendChild(rowDiv);
+                  });
+                });
+      </script>
+    </div>
+    <!-- TradingView Mini Chart Widget END -->
+  </body>
+</html>

@@ -1,0 +1,23 @@
+[
+  [
+    {"symbol": "FRED:SP500", "dateRange": "1M"},
+    {"symbol": "NASDAQ:IXIC", "dateRange": "1M"},
+    {"symbol": "FRED:DJIA", "dateRange": "1M"},
+    {"symbol": "SSE:000001", "dateRange": "1M"},
+    {"symbol": "SZSE:399001", "dateRange": "1M"},
+    {"symbol": "HSI:HSI", "dateRange": "1M"},
+    {"symbol": "FOREXCOM:JP225", "dateRange": "1M"}
+  ],
+  [
+    {"symbol": "FX_IDC:USDCNY", "dateRange": "1M"},
+    {"symbol": "ECONOMICS:USINTR", "dateRange": "6M"},
+    {"symbol": "TVC:GOLD", "dateRange": "1M"},
+    {"symbol": "NASDAQ:AAPL", "dateRange": "1M"},
+    {"symbol": "NYSE:BRK.B", "dateRange": "1M"},
+    {"symbol": "NASDAQ:NVDA", "dateRange": "1M"},
+    {"symbol": "SSE:600519", "dateRange": "1M"}
+  ],
+  [
+    {"symbol": "ECONOMICS:USIRYY", "dateRange": "3M"}
+  ]
+]
